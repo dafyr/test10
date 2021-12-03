@@ -1,9 +1,20 @@
-double my_pow(double inNum, unsigned int PowNum)
+double my_pow(double inNum, int PowNum)
 {
-    for (int i = 0; i < PowNum; i++)
+    double result = 1;
+
+    while (PowNum)
     {
-        inNum *= inNum;
+        if (PowNum % 2 == 0)
+        {
+            PowNum /= 2;
+            inNum *= inNum;
+        }
+        else
+        {
+            PowNum--;
+            result *= inNum;
+        }
     }
 
-    return inNum;
+    return result;
 }
